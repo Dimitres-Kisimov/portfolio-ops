@@ -59,3 +59,27 @@
 | logistics-digital-twin | 80 | [warn] | [ok] | - | not a git repo |
 | wuerth-data-ai-casestudy | 70 | [ok] | [ok] | - | missing ci, missing tests, missing business_case |
 
+## Status check — 2026-07-24 16:47 UTC
+
+| repo | score | git | ruff | tests | gaps |
+|---|---|---|---|---|---|
+| bio-efficient-ai | 100 | [ok] | [ok] | - | none |
+| revops-optimizer | 100 | [ok] | [ok] | - | none |
+
+## Status check — 2026-07-24 16:47 UTC
+
+| repo | score | git | ruff | tests | gaps |
+|---|---|---|---|---|---|
+| revops-optimizer | 100 | [ok] | [ok] | - | none |
+| sales-kpi-analytics | 100 | [ok] | [ok] | - | none |
+| distributor-intelligence-platform | 100 | [ok] | [ok] | - | none |
+| agentic-automation-lab | 100 | [ok] | [ok] | - | none |
+| agent-flow-studio | 100 | [ok] | [ok] | - | none |
+| doc-extract-agent | 100 | [ok] | [ok] | - | none |
+| automation-roi-explorer | 100 | [ok] | [ok] | - | none |
+| route-optimizer | 100 | [ok] | [ok] | - | none |
+| bio-efficient-ai | 100 | [ok] | [ok] | - | none |
+| ml-models-lab | 40 | [warn] | [ok] | - | missing readme, missing ci, missing tests, missing business_case, missing deliverables, 5 uncommitted file(s) |
+| logistics-digital-twin | 90 | [warn] | [ok] | - | 5 unpushed commit(s) |
+| wuerth-data-ai-casestudy | 70 | [ok] | [ok] | - | missing ci, missing tests, missing business_case |
+

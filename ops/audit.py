@@ -51,7 +51,8 @@ EXPECTED = {
     "ci": [".github/workflows"],
     "tests": ["tests", "test"],
     "business_case": ["docs/BUSINESS_CASE.md"],
-    "deliverables": ["deliverables"],
+    # a repo's exportable artifact may live in deliverables/ or paper/ (research)
+    "deliverables": ["deliverables", "paper"],
 }
 
 
