@@ -25,3 +25,20 @@
 | logistics-digital-twin | — | not present | — | — | not built yet |
 | wuerth-data-ai-casestudy | 40 | [warn] | [--] | - | missing ci, missing tests, missing business_case, not a git repo, ruff not clean |
 
+## Status check — 2026-07-24 16:33 UTC
+
+| repo | score | git | ruff | tests | gaps |
+|---|---|---|---|---|---|
+| revops-optimizer | 100 | [ok] | [ok] | - | none |
+| sales-kpi-analytics | 100 | [ok] | [ok] | - | none |
+| distributor-intelligence-platform | 100 | [ok] | [ok] | - | none |
+| agentic-automation-lab | 100 | [ok] | [ok] | - | none |
+| agent-flow-studio | 100 | [ok] | [ok] | - | none |
+| doc-extract-agent | 100 | [ok] | [ok] | - | none |
+| automation-roi-explorer | 100 | [ok] | [ok] | - | none |
+| route-optimizer | 100 | [ok] | [ok] | - | none |
+| bio-efficient-ai | 90 | [ok] | [ok] | - | missing deliverables |
+| ml-models-lab | 40 | [ok] | [ok] | - | missing readme, missing license, missing ci, missing tests, missing business_case, missing deliverables |
+| logistics-digital-twin | 60 | [warn] | [ok] | - | missing readme, missing business_case, not a git repo |
+| wuerth-data-ai-casestudy | 70 | [ok] | [ok] | - | missing ci, missing tests, missing business_case |
+
