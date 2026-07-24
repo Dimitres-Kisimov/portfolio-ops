@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "portfolio-ops"
+version = "0.1.0"
+description = "Self-improvement toolkit for the Data & AI portfolio: read-only audit scorecards, ranked backlog, and safe API-first GitHub helpers."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Dimitres Kisimov" }]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ops*", "autohelper*"]
+
+[tool.ruff]
+line-length = 100
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

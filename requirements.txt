@@ -1,0 +1,4 @@
+# The audit/rank engines use only the Python standard library.
+# Dev tooling (for the gates the routine runs):
+ruff
+pytest
