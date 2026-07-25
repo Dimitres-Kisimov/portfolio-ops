@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Self-improvement toolkit for the Data & AI portfolio: read-only audit scorecards, ranked backlog, and safe API-first GitHub helpers."
 readme = "README.md"
 requires-python = ">=3.10"
-license = { text = "MIT" }
+license = { text = "Proprietary" }
 authors = [{ name = "Dimitres Kisimov" }]
 
 [tool.setuptools.packages.find]
