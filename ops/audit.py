@@ -42,6 +42,10 @@ DEFAULT_REPOS = [
     "ml-models-lab",
     "logistics-digital-twin",
     "wuerth-data-ai-casestudy",
+    "supply-network-opt",
+    "logistics-flow-studio",
+    "market-basket-analysis",
+    "portfolio-site",
 ]
 
 # Artifacts we expect a shippable, professional repo to carry.
