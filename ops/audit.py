@@ -46,6 +46,12 @@ DEFAULT_REPOS = [
     "logistics-flow-studio",
     "market-basket-analysis",
     "portfolio-site",
+    "retail-analytics-real",
+    "predictive-maintenance",
+    "fraud-detection-ops",
+    "energy-demand-forecast",
+    "quality-anomaly-vision",
+    "quantum-explainer",
 ]
 
 # Artifacts we expect a shippable, professional repo to carry.

@@ -83,3 +83,30 @@
 | logistics-digital-twin | 90 | [warn] | [ok] | - | 5 unpushed commit(s) |
 | wuerth-data-ai-casestudy | 70 | [ok] | [ok] | - | missing ci, missing tests, missing business_case |
 
+## Status check — 2026-07-26 00:50 UTC
+
+| repo | score | git | ruff | tests | gaps |
+|---|---|---|---|---|---|
+| revops-optimizer | 100 | [ok] | [ok] | - | none |
+| sales-kpi-analytics | 100 | [ok] | [ok] | - | none |
+| distributor-intelligence-platform | 80 | [warn] | [--] | - | 1 uncommitted file(s), ruff not clean |
+| agentic-automation-lab | 100 | [ok] | [ok] | - | none |
+| agent-flow-studio | 100 | [ok] | [ok] | - | none |
+| doc-extract-agent | 90 | [warn] | [ok] | - | 4 uncommitted file(s) |
+| automation-roi-explorer | 90 | [warn] | [ok] | - | 1 uncommitted file(s) |
+| route-optimizer | 100 | [ok] | [ok] | - | none |
+| bio-efficient-ai | 100 | [ok] | [ok] | - | none |
+| ml-models-lab | 80 | [ok] | [ok] | - | missing business_case, missing deliverables |
+| logistics-digital-twin | 90 | [warn] | [ok] | - | 3 unpushed commit(s) |
+| wuerth-data-ai-casestudy | 80 | [warn] | [ok] | - | missing business_case, 1 uncommitted file(s) |
+| supply-network-opt | 100 | [ok] | [ok] | - | none |
+| logistics-flow-studio | 60 | [ok] | [ok] | - | missing ci, missing tests, missing business_case, missing deliverables |
+| market-basket-analysis | 100 | [ok] | [ok] | - | none |
+| portfolio-site | 70 | [ok] | [ok] | - | missing tests, missing business_case, missing deliverables |
+| retail-analytics-real | 100 | [ok] | [ok] | - | none |
+| predictive-maintenance | 100 | [ok] | [ok] | - | none |
+| fraud-detection-ops | 100 | [ok] | [ok] | - | none |
+| energy-demand-forecast | 100 | [ok] | [ok] | - | none |
+| quality-anomaly-vision | 100 | [ok] | [ok] | - | none |
+| quantum-explainer | 60 | [ok] | [--] | - | missing ci, missing business_case, missing deliverables, ruff not clean |
+
