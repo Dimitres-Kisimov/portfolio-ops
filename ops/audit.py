@@ -52,6 +52,8 @@ DEFAULT_REPOS = [
     "energy-demand-forecast",
     "quality-anomaly-vision",
     "quantum-explainer",
+    "decision-chain",
+    "chain-mcp",
 ]
 
 # Artifacts we expect a shippable, professional repo to carry.
