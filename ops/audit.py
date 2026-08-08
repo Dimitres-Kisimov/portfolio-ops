@@ -124,10 +124,27 @@ def audit_repo(repo: Path, run_tests: bool = True) -> dict:
 
     # tests (optional; the slow part)
     if run_tests and _present(repo, EXPECTED["tests"]):
-        rc, out = _run([sys.executable, "-m", "pytest", "-q"], repo, 420)
-        # pull a passed/failed count out of pytest's summary line if present
-        summary = out.strip().splitlines()[-1] if out.strip() else ""
-        sc["pytest"] = {"green": rc == 0, "code": rc, "summary": summary[-160:]}
+        tdir = next(repo / n for n in EXPECTED["tests"] if (repo / n).exists())
+        has_py = any(tdir.rglob("test_*.py"))
+        has_js = any(tdir.glob("*.test.js")) or any(tdir.glob("*.mjs"))
+        if has_js and not has_py:
+            # a Node-suite repo: run its real harness, not pytest
+            runner = tdir / "run-all.mjs"
+            # bare "node --test" (auto-discovery from the repo root) is the form
+            # the repos document in package.json; passing the dir explicitly
+            # changes fixture resolution and can fail a green suite.
+            cmd = ["node", str(runner)] if runner.exists() else ["node", "--test"]
+            rc, out = _run(cmd, repo, 420)
+            summary = out.strip().splitlines()[-1] if out.strip() else ""
+            sc["pytest"] = {"green": rc == 0, "code": rc, "summary": ("node: " + summary)[-160:]}
+        else:
+            rc, out = _run([sys.executable, "-m", "pytest", "-q"], repo, 420)
+            # pull a passed/failed count out of pytest's summary line if present
+            summary = out.strip().splitlines()[-1] if out.strip() else ""
+            if rc == 5:  # pytest's "no tests collected" - not a failure
+                sc["pytest"] = {"green": None, "code": rc, "summary": "no python tests collected"}
+            else:
+                sc["pytest"] = {"green": rc == 0, "code": rc, "summary": summary[-160:]}
     else:
         sc["pytest"] = {"green": None, "code": None, "summary": "no tests dir / skipped"}
 
