@@ -1,0 +1,446 @@
+{
+  "generated": "2026-08-20 09:43 UTC",
+  "repos": [
+    {
+      "repo": "agent-flow-studio",
+      "git": {
+        "branch": "main",
+        "dirty": 0,
+        "unpushed": 0
+      },
+      "secrets": [],
+      "risks": [
+        "test/design.test.js: exec()"
+      ],
+      "gaps": 0,
+      "tests": {
+        "ran": false,
+        "green": null,
+        "summary": "skipped (--quick)"
+      }
+    },
+    {
+      "repo": "agentic-automation-lab",
+      "git": {
+        "branch": "main",
+        "dirty": 0,
+        "unpushed": 0
+      },
+      "secrets": [],
+      "risks": [
+        "tests/test_checkpoints.py: eval()",
+        "tests/test_verification.py: eval()"
+      ],
+      "gaps": 0,
+      "tests": {
+        "ran": false,
+        "green": null,
+        "summary": "skipped (--quick)"
+      }
+    },
+    {
+      "repo": "automation-roi-explorer",
+      "git": {
+        "branch": "main",
+        "dirty": 0,
+        "unpushed": 0
+      },
+      "secrets": [],
+      "risks": [],
+      "gaps": 0,
+      "tests": {
+        "ran": false,
+        "green": null,
+        "summary": "skipped (--quick)"
+      }
+    },
+    {
+      "repo": "bio-efficient-ai",
+      "git": {
+        "branch": "main",
+        "dirty": 0,
+        "unpushed": 0
+      },
+      "secrets": [],
+      "risks": [
+        "experiments/bench_liquid.py: eval()"
+      ],
+      "gaps": 0,
+      "tests": {
+        "ran": false,
+        "green": null,
+        "summary": "skipped (--quick)"
+      }
+    },
+    {
+      "repo": "chain-mcp",
+      "git": {
+        "branch": "master",
+        "dirty": 0,
+        "unpushed": 0
+      },
+      "secrets": [],
+      "risks": [],
+      "gaps": 0,
+      "tests": {
+        "ran": false,
+        "green": null,
+        "summary": "skipped (--quick)"
+      }
+    },
+    {
+      "repo": "decision-chain",
+      "git": {
+        "branch": "main",
+        "dirty": 0,
+        "unpushed": 0
+      },
+      "secrets": [],
+      "risks": [],
+      "gaps": 0,
+      "tests": {
+        "ran": false,
+        "green": null,
+        "summary": "skipped (--quick)"
+      }
+    },
+    {
+      "repo": "Dimitres-Kisimov",
+      "git": {
+        "branch": "master",
+        "dirty": 0,
+        "unpushed": 0
+      },
+      "secrets": [],
+      "risks": [],
+      "gaps": 0,
+      "tests": {
+        "ran": false,
+        "green": null,
+        "summary": "skipped (--quick)"
+      }
+    },
+    {
+      "repo": "distributor-intelligence-platform",
+      "git": {
+        "branch": "master",
+        "dirty": 0,
+        "unpushed": 0
+      },
+      "secrets": [],
+      "risks": [
+        "static/app.js: exec()"
+      ],
+      "gaps": 0,
+      "tests": {
+        "ran": false,
+        "green": null,
+        "summary": "skipped (--quick)"
+      }
+    },
+    {
+      "repo": "doc-extract-agent",
+      "git": {
+        "branch": "main",
+        "dirty": 0,
+        "unpushed": 0
+      },
+      "secrets": [],
+      "risks": [],
+      "gaps": 0,
+      "tests": {
+        "ran": false,
+        "green": null,
+        "summary": "skipped (--quick)"
+      }
+    },
+    {
+      "repo": "energy-demand-forecast",
+      "git": {
+        "branch": "main",
+        "dirty": 0,
+        "unpushed": 0
+      },
+      "secrets": [],
+      "risks": [],
+      "gaps": 0,
+      "tests": {
+        "ran": false,
+        "green": null,
+        "summary": "skipped (--quick)"
+      }
+    },
+    {
+      "repo": "fraud-detection-ops",
+      "git": {
+        "branch": "main",
+        "dirty": 0,
+        "unpushed": 0
+      },
+      "secrets": [],
+      "risks": [],
+      "gaps": 0,
+      "tests": {
+        "ran": false,
+        "green": null,
+        "summary": "skipped (--quick)"
+      }
+    },
+    {
+      "repo": "logistics-digital-twin",
+      "git": {
+        "branch": "master",
+        "dirty": 0,
+        "unpushed": 0
+      },
+      "secrets": [],
+      "risks": [],
+      "gaps": 1,
+      "tests": {
+        "ran": false,
+        "green": null,
+        "summary": "skipped (--quick)"
+      }
+    },
+    {
+      "repo": "logistics-flow-studio",
+      "git": {
+        "branch": "main",
+        "dirty": 2,
+        "unpushed": 0
+      },
+      "secrets": [],
+      "risks": [
+        "CHANGELOG.md: eval()",
+        "README.md: eval()",
+        "docs/PRODUCTION.md: eval()",
+        "measure_optimizer.js: eval()",
+        "shapes.js: exec()"
+      ],
+      "gaps": 4,
+      "tests": {
+        "ran": false,
+        "green": null,
+        "summary": "skipped (--quick)"
+      }
+    },
+    {
+      "repo": "market-basket-analysis",
+      "git": {
+        "branch": "main",
+        "dirty": 0,
+        "unpushed": 0
+      },
+      "secrets": [],
+      "risks": [],
+      "gaps": 0,
+      "tests": {
+        "ran": false,
+        "green": null,
+        "summary": "skipped (--quick)"
+      }
+    },
+    {
+      "repo": "ml-models-lab",
+      "git": {
+        "branch": "main",
+        "dirty": 0,
+        "unpushed": 0
+      },
+      "secrets": [],
+      "risks": [
+        "mllab/demand_forecast_net/model.py: eval()",
+        "mllab/order_anomaly_ae/ae.py: eval()",
+        "mllab/sku_text_classifier/model.py: eval()"
+      ],
+      "gaps": 5,
+      "tests": {
+        "ran": false,
+        "green": null,
+        "summary": "skipped (--quick)"
+      }
+    },
+    {
+      "repo": "portfolio-site",
+      "git": {
+        "branch": "main",
+        "dirty": 0,
+        "unpushed": 0
+      },
+      "secrets": [],
+      "risks": [],
+      "gaps": 2,
+      "tests": {
+        "ran": false,
+        "green": null,
+        "summary": "skipped (--quick)"
+      }
+    },
+    {
+      "repo": "predictive-maintenance",
+      "git": {
+        "branch": "main",
+        "dirty": 0,
+        "unpushed": 0
+      },
+      "secrets": [],
+      "risks": [
+        "pdm/detect.py: eval()"
+      ],
+      "gaps": 0,
+      "tests": {
+        "ran": false,
+        "green": null,
+        "summary": "skipped (--quick)"
+      }
+    },
+    {
+      "repo": "quality-anomaly-vision",
+      "git": {
+        "branch": "main",
+        "dirty": 0,
+        "unpushed": 0
+      },
+      "secrets": [],
+      "risks": [
+        "qav/model.py: eval()"
+      ],
+      "gaps": 1,
+      "tests": {
+        "ran": false,
+        "green": null,
+        "summary": "skipped (--quick)"
+      }
+    },
+    {
+      "repo": "quantum-explainer",
+      "git": {
+        "branch": "main",
+        "dirty": 0,
+        "unpushed": 0
+      },
+      "secrets": [],
+      "risks": [],
+      "gaps": 0,
+      "tests": {
+        "ran": false,
+        "green": null,
+        "summary": "skipped (--quick)"
+      }
+    },
+    {
+      "repo": "retail-analytics-real",
+      "git": {
+        "branch": "main",
+        "dirty": 0,
+        "unpushed": 0
+      },
+      "secrets": [],
+      "risks": [],
+      "gaps": 0,
+      "tests": {
+        "ran": false,
+        "green": null,
+        "summary": "skipped (--quick)"
+      }
+    },
+    {
+      "repo": "revops-optimizer",
+      "git": {
+        "branch": "main",
+        "dirty": 0,
+        "unpushed": 0
+      },
+      "secrets": [],
+      "risks": [
+        "revops/predict/forecast.py: eval()"
+      ],
+      "gaps": 0,
+      "tests": {
+        "ran": false,
+        "green": null,
+        "summary": "skipped (--quick)"
+      }
+    },
+    {
+      "repo": "route-optimizer",
+      "git": {
+        "branch": "main",
+        "dirty": 0,
+        "unpushed": 0
+      },
+      "secrets": [],
+      "risks": [],
+      "gaps": 2,
+      "tests": {
+        "ran": false,
+        "green": null,
+        "summary": "skipped (--quick)"
+      }
+    },
+    {
+      "repo": "sales-kpi-analytics",
+      "git": {
+        "branch": "main",
+        "dirty": 0,
+        "unpushed": 0
+      },
+      "secrets": [],
+      "risks": [],
+      "gaps": 0,
+      "tests": {
+        "ran": false,
+        "green": null,
+        "summary": "skipped (--quick)"
+      }
+    },
+    {
+      "repo": "SCS_AI_Item_Recognition",
+      "git": {
+        "branch": "main",
+        "dirty": 1,
+        "unpushed": 0
+      },
+      "secrets": [],
+      "risks": [],
+      "gaps": 0,
+      "tests": {
+        "ran": false,
+        "green": null,
+        "summary": "skipped (--quick)"
+      }
+    },
+    {
+      "repo": "supply-network-opt",
+      "git": {
+        "branch": "main",
+        "dirty": 0,
+        "unpushed": 0
+      },
+      "secrets": [],
+      "risks": [],
+      "gaps": 0,
+      "tests": {
+        "ran": false,
+        "green": null,
+        "summary": "skipped (--quick)"
+      }
+    },
+    {
+      "repo": "wuerth-data-ai-casestudy",
+      "git": {
+        "branch": "main",
+        "dirty": 0,
+        "unpushed": 0
+      },
+      "secrets": [],
+      "risks": [],
+      "gaps": 1,
+      "tests": {
+        "ran": false,
+        "green": null,
+        "summary": "skipped (--quick)"
+      }
+    }
+  ]
+}
