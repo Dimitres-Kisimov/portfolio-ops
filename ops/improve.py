@@ -19,7 +19,8 @@ from pathlib import Path
 
 ROOT = Path(r"C:\Users\dimik")
 OPS = ROOT / "portfolio-ops"
-SKIP = {"3DpicToIFCModeling", "portfolio-ops", "startup", "slotpilot", "bewerbung"}
+SKIP = {"3DpicToIFCModeling", "portfolio-ops", "startup", "slotpilot", "bewerbung",
+        "SCS_AI_Item_Recognition"}  # old-account predecessor of 3DpicToIFCModeling, not portfolio
 
 QUOTES = chr(34) + chr(39)  # " and ' without a literal apostrophe in source
 SECRET_PATTERNS = [
