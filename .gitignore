@@ -6,3 +6,5 @@ __pycache__/
 .venv/
 scorecards/
 schedule/cron.log
+improve_boot.log
+improve_report.json

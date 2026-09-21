@@ -10,6 +10,7 @@ features - that needs a session (see HUMAN_TASKS.md decision B).
 from __future__ import annotations
 
 import json
+import os
 import re
 import subprocess
 import sys
@@ -42,10 +43,10 @@ BIN_EXT = {".png", ".jpg", ".jpeg", ".gif", ".pdf", ".xlsx", ".pptx",
            ".ico", ".zip", ".woff", ".woff2", ".webp", ".mp4"}
 
 
-def sh(cmd, cwd=None, timeout=900):
+def sh(cmd, cwd=None, timeout=900, env=None):
     try:
         p = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True,
-                           timeout=timeout, errors="replace")
+                           timeout=timeout, errors="replace", env=env)
         return p.returncode, (p.stdout or "") + (p.stderr or "")
     except Exception as e:  # noqa: BLE001 - a failed probe must never stop the pass
         return 1, str(e)
@@ -58,12 +59,36 @@ def repos():
 
 
 def git_state(repo):
+    # Fetch first: work done elsewhere (another machine, a cloud agent, ChatGPT
+    # Codex) lands on the remote and is invisible to a local-only scan. The
+    # default credential helper hangs on this machine; wincred does not.
+    env = dict(os.environ, GIT_TERMINAL_PROMPT="0")
+    sh(["git", "-c", "credential.helper=", "-c", "credential.helper=wincred",
+        "fetch", "-q", "--prune", "origin"], repo, 60, env)
     _, br = sh(["git", "rev-parse", "--abbrev-ref", "HEAD"], repo, 60)
     _, st = sh(["git", "status", "--porcelain"], repo, 60)
     _, un = sh(["git", "log", "--branches", "--not", "--remotes", "--oneline"], repo, 60)
+    ahead = 0
+    for rb in ("origin/main", "origin/master"):
+        if sh(["git", "rev-parse", "-q", "--verify", rb], repo, 30)[0] == 0:
+            _, n = sh(["git", "rev-list", "--count", "HEAD.." + rb], repo, 60)
+            ahead = int(n.strip() or 0)
+            break
+    unmerged = []
+    _, refs = sh(["git", "for-each-ref", "--format=%(refname:short) %(committerdate:short)",
+                  "refs/remotes/origin"], repo, 60)
+    for line in refs.splitlines():
+        name, _, date = line.strip().partition(" ")
+        # refname:short renders refs/remotes/origin/HEAD as plain "origin"
+        if not name or name in ("origin", "origin/HEAD", "origin/main", "origin/master"):
+            continue
+        if sh(["git", "merge-base", "--is-ancestor", name, "HEAD"], repo, 30)[0] != 0:
+            unmerged.append(name + " (" + date + ")")
     return {"branch": br.strip(),
             "dirty": len([x for x in st.splitlines() if x.strip()]),
-            "unpushed": len([x for x in un.splitlines() if x.strip()])}
+            "unpushed": len([x for x in un.splitlines() if x.strip()]),
+            "remote_ahead": ahead,
+            "unmerged_remote": unmerged}
 
 
 def scan(repo):
@@ -136,6 +161,11 @@ def main():
             backlog.append((70, repo.name, str(g["unpushed"]) + " unpushed commit(s)"))
         if g["dirty"]:
             backlog.append((60, repo.name, str(g["dirty"]) + " uncommitted file(s)"))
+        if g["remote_ahead"]:
+            backlog.append((80, repo.name, "origin is " + str(g["remote_ahead"])
+                            + " commit(s) AHEAD of local - merge before working"))
+        for b in g["unmerged_remote"][:3]:
+            backlog.append((75, repo.name, "unmerged remote branch - " + b))
         for r in risks[:3]:
             backlog.append((40, repo.name, "review risky shape - " + r))
         for gp in gaps[:4]:
@@ -147,6 +177,7 @@ def main():
     red = [r for r in report if r["tests"]["green"] is False]
     sec = [r for r in report if r["secrets"]]
     dirty = [r for r in report if r["git"]["dirty"] or r["git"]["unpushed"]]
+    remote = [r for r in report if r["git"]["remote_ahead"] or r["git"]["unmerged_remote"]]
     L = ["# NEXT PHASE - auto-drafted by the boot engine",
          "*Generated " + stamp + ". Deterministic measurement; no AI ran.*", "",
          "## Health",
@@ -156,6 +187,8 @@ def main():
          "- Secrets in tracked files: **" + str(len(sec)) + "**" + (" STOP" if sec else " OK"),
          "- Uncommitted/unpushed: **" + str(len(dirty)) + "**"
          + ((" - " + ", ".join(r["repo"] for r in dirty)) if dirty else " OK"),
+         "- Remote work not merged locally: **" + str(len(remote)) + "**"
+         + ((" - " + ", ".join(r["repo"] for r in remote)) if remote else " OK"),
          "", "## Ranked backlog (top 25)", "",
          "| # | Pri | Repo | Item |", "|---|---|---|---|"]
     for i, (p, r, item) in enumerate(backlog[:25], 1):
@@ -171,7 +204,7 @@ def main():
     (ROOT / "PHASE_PLAN.md").write_text("\n".join(L), encoding="utf-8")
     print("[improve] " + str(len(report)) + " repos | red=" + str(len(red))
           + " secrets=" + str(len(sec)) + " dirty=" + str(len(dirty))
-          + " | backlog=" + str(len(backlog)))
+          + " remote=" + str(len(remote)) + " | backlog=" + str(len(backlog)))
     return 0
 
 
