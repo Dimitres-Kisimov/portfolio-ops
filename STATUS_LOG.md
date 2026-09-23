@@ -2418,3 +2418,19 @@
 | decision-chain | 100 | [ok] | [ok] | [ok] | none |
 | chain-mcp | 100 | [ok] | [ok] | [ok] | none |
 
+## Status check — 2026-09-23 16:16 UTC
+
+| repo | score | git | ruff | tests | gaps |
+|---|---|---|---|---|---|
+| logistics-flow-studio | 100 | [ok] | [ok] | - | none |
+| portfolio-site | 100 | [ok] | [ok] | - | none |
+| wuerth-data-ai-casestudy | 90 | [warn] | [ok] | - | 1 uncommitted file(s) |
+
+## Status check — 2026-09-23 16:17 UTC
+
+| repo | score | git | ruff | tests | gaps |
+|---|---|---|---|---|---|
+| logistics-flow-studio | 100 | [ok] | [ok] | - | none |
+| portfolio-site | 100 | [ok] | [ok] | - | none |
+| wuerth-data-ai-casestudy | 100 | [ok] | [ok] | - | none |
+
